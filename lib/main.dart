@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-      MyApp()
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,15 +9,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 60, horizontal: 10),
-            padding: const EdgeInsets.fromLTRB(10, 50, 100, 50),
-            color: Colors.white,
-            child: const Text("Hey"),
+          child: Column(
+            children: [
+              CircleAvatar(
+                backgroundImage: AssetImage('images/rj.jpeg'),
+                radius: 50.0,
+              ),
+              Text(
+                "RJ",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold
+                ),
+              )
+            ],
           ),
         ),
       ),
